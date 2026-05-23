@@ -11,3 +11,14 @@ data/cache/
 
 # never commit secrets
 .streamlit/secrets.toml
+
+# Trading Terminal — never commit credentials
+trading_terminal/backend/.env
+trading_terminal/backend/__pycache__/
+trading_terminal/backend/*.egg-info/
+
+# Next.js build output
+trading_terminal/frontend/.next/
+trading_terminal/frontend/node_modules/
+trading_terminal/frontend/.env.local
+trading_terminal/frontend/out/
