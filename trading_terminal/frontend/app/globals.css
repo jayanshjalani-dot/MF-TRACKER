@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0d0f14;
+  --panel: #13161d;
+  --border: #1e2433;
+  --green: #00c853;
+  --red: #ff1744;
+  --yellow: #ffd600;
+  --blue: #2979ff;
+  --text: #e2e8f0;
+  --muted: #4a5568;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--panel);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* Panel card */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+/* Flicker animation for live prices */
+@keyframes flash-green {
+  0% { background: rgba(0, 200, 83, 0.3); }
+  100% { background: transparent; }
+}
+@keyframes flash-red {
+  0% { background: rgba(255, 23, 68, 0.3); }
+  100% { background: transparent; }
+}
+
+.flash-up {
+  animation: flash-green 0.4s ease-out;
+}
+.flash-down {
+  animation: flash-red 0.4s ease-out;
+}
+
+/* ATM highlight */
+.atm-row {
+  background: rgba(41, 121, 255, 0.08) !important;
+  border-top: 1px solid rgba(41, 121, 255, 0.3);
+  border-bottom: 1px solid rgba(41, 121, 255, 0.3);
+}
